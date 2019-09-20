@@ -1,0 +1,202 @@
+{include file="template/header" /}
+
+
+		<div class="page_banner">
+			<img class="img1" src="__UMENTER__/img/banner7.jpg" />
+			<img class="img2" src="__UMENTER__/img/p-banner8.jpg" />
+		</div>
+		
+		<div class="guide w clearfloat">
+			<div class="guide_l">
+				<div class="guide_l_t">
+					<div class="search">
+						<div class="search_box">
+							<form action="/index/teacher/index" method="get">
+								<input type="text" id="content" name="content" placeholder="学校、学历、专业搜索导师"/>
+								<button id="search"></button>
+							</form>
+
+						</div>								
+					</div>
+					<div class="guide_list">
+						<div class="guide_item">
+							<p class="p1">留学地区：</p>
+							<ul>
+								<li class="on"><a href="/index/teacher/index">不限</a></li>
+								{foreach $areas as $area}
+								<li><a href="/index/teacher/index?id={$area.cid}">{$area.name}</a></li>
+								{/foreach}
+							</ul>
+						</div>
+						<div class="guide_item">
+							<p class="p1">专业：</p>
+							<ul>
+								<li class="on"><a href="/index/teacher/index">不限</a></li>
+								{foreach $majors as $major}
+								<li><a href="/index/teacher/index?id={$major.cid}">{$major.name}</a></li>
+								{/foreach}
+							</ul>
+						</div>
+						<div class="guide_item">
+							<p class="p1">顾问学位：</p>
+							<ul>
+								{foreach $guwens as $guwen}
+								<li><a href="/index/teacher/index?id={$guwen.cid}">{$guwen.name}</a></li>
+								{/foreach}
+							</ul>
+						</div>
+						<div class="guide_item">
+							<p class="p1">申请学位：</p>
+							<ul>
+								{foreach $shenqings as $shenqing}
+								<li><a href="/index/teacher/index?id={$shenqing.cid}">{$shenqing.name}</a></li>
+								{/foreach}
+							</ul>
+						</div>
+					</div>
+				</div>	
+				<div class="guide_b">
+					<div class="guide_b_list">
+						<ul>
+							<li class="on"><a href="#">综合服务</a></li>
+							<li><a href="#">服务人数</a></li>
+							<li><a href="#">评分</a></li>
+						</ul>
+					</div>
+					<div class="guide_b_content">
+						{foreach $teachers as $teacher}
+						<div class="guide_box">
+							<a href="detail.html?id={$teacher.id}">
+								<div class="guide_box_pic">
+									<img src="{$teacher.headimg}" />
+								</div>
+								<div class="guide_box_des">
+									<h3>{$teacher.teachername}</h3>
+									<p>服务人数：<span class="orange">{$teacher.servicenum}</span> <span style="margin-left:2%;">评分：<span class="orange">{$teacher.score}</span></span></p>
+									<p>服务内容：{$teacher.scontent} </p>
+									<p>擅长领域：{$teacher.goodat}</p>
+								</div>
+							</a>							
+						</div>
+						{/foreach}
+						{$teachers->render()}
+					</div>
+				</div>
+			</div>
+			<div class="guide_r">
+				<div class="guide_r_t">
+					<a href="#"><img src="__UMENTER__/img/guide.jpg"/></a>
+				</div>
+				<div class="guide_r_c">
+					<h3 class="title3">资讯</h3>
+					<ul>
+						{foreach name="news" item="new"}
+						<li>
+							<a href="/index/news/detail.html?id={$new.id}">
+								<h4>{$new.title}</h4>
+								<span>{$new.create_time|strip_tags|mb_substr=0,10,'utf-8'}</span>
+							</a>
+						</li>
+						{/foreach}
+					</ul>
+				</div>
+				<div class="guide_r_b">
+					<h3 class="title3">导师推荐</h3>
+					<ul>
+						<li>
+							<a href="#">
+								<div class="guide_r_b_img">
+									<img src="__UMENTER__/img/tou2.png" />
+								</div>
+								<div class="guide_r_b_des">
+									<h4>李学长</h4>
+									<p>半DIY / 网申指导 / 文书修改 / 文书写作 / 选校 / 留学咨询</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="guide_r_b_img">
+									<img src="__UMENTER__/img/tou3.png" />
+								</div>
+								<div class="guide_r_b_des">
+									<h4>李学长</h4>
+									<p>半DIY / 网申指导 / 文书修改 / 文书写作 / 选校 / 留学咨询</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="guide_r_b_img">
+									<img src="__UMENTER__/img/tou4.png" />
+								</div>
+								<div class="guide_r_b_des">
+									<h4>李学长</h4>
+									<p>半DIY / 网申指导 / 文书修改 / 文书写作 / 选校 / 留学咨询</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="guide_r_b_img">
+									<img src="__UMENTER__/img/tou5.png" />
+								</div>
+								<div class="guide_r_b_des">
+									<h4>李学长</h4>
+									<p>半DIY / 网申指导 / 文书修改 / 文书写作 / 选校 / 留学咨询</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="guide_r_b_img">
+									<img src="__UMENTER__/img/tou6.png" />
+								</div>
+								<div class="guide_r_b_des">
+									<h4>李学长</h4>
+									<p>半DIY / 网申指导 / 文书修改 / 文书写作 / 选校 / 留学咨询</p>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+		</div>
+
+
+{include file="template/footer" /}
+
+		
+		
+		<script src="__UMENTER__/js/hammer.min.js"></script>
+		<script src="__UMENTER__/js/common.js"></script>
+		<script>
+		    var swiper = new Swiper('.swiper-container', {
+		      spaceBetween: 30,
+		      centeredSlides: true,
+		      autoplay: {
+		        delay: 3500,
+		        disableOnInteraction: false,
+		      },
+		      pagination: {
+		        el: '.swiper-pagination',
+		        clickable: true,
+		      },
+		      navigation: {
+		        nextEl: '.swiper-button-next',
+		        prevEl: '.swiper-button-prev',
+		      },
+		      loop:true,
+		    });
+		</script>
+
+        <script>
+			//给搜索按钮绑定点击事件
+            $('#search').click(function () {
+                $('form').submit();
+            });
+
+		</script>
+	</body>
+</html>

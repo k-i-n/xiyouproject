@@ -1,0 +1,114 @@
+{include file="template/header" /}
+
+
+<div class="news_banner">
+	<div class="slider center">
+		{foreach $list as $item}
+		<div>
+			<div class="news_banner_box">
+				<a href="detail.html?id={$item.id}">
+					<img src="{$item.newsimage}" />
+					<div class="news_banner_des">
+						<p>{$item.title}</p>
+					</div>
+				</a>
+			</div>
+		</div>
+		{/foreach}
+	</div>
+	<div class="slider center1">
+		{foreach $list as $item}
+		<div>
+			<div class="news_banner_box">
+				<a href="detail.html?id={$item.id}">
+					<img src="{$item.newsimage}" />
+					<div class="news_banner_des">
+						<p>{$item.title}</p>
+					</div>
+				</a>
+			</div>
+		</div>
+		{/foreach}
+	</div>
+</div>
+
+<div class="news w clearfloat">
+	<div class="news_l">
+		<div class="news_details">
+			<h3>{$info.title}</h3>
+			<div class="news_details_des">
+				{$info.content}
+			</div>
+			<div class="article">
+				<ul>
+					{if !isset($info_before.id)}
+					<li>上一篇：{$info_before.title} </li>
+					{else /}
+					<li>上一篇：<a href="detail.html?id={$info_before.id}">{$info_before.title}</a> </li>
+					{/if}
+
+					{if !isset($info_after.id)}
+					<li>下一篇：{$info_after.title} </li>
+					{else /}
+					<li>下一篇：<a href="detail.html?id={$info_after.id}">{$info_after.title}</a> </li>
+					{/if}
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="news_r">
+		<div class="news_r_t">
+			<h3 class="title3">热门标签</h3>
+			<div class="news_tag">
+				<a href="#">行家指引</a>
+				<a href="#">offers</a>
+				<a href="#">留学文书服务</a>
+				<a href="#">Application Guide</a>
+				<a href="#">science</a>
+				<a href="#">留学文书服务</a>
+				<a href="#">行家指引</a>
+				<a href="#">offers</a>
+			</div>
+		</div>
+		<div class="guide_r_t news_r_c">
+			<a href="#"><img src="__UMENTER__/img/guide.jpg"/></a>
+		</div>
+		<div class="news_ewm">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="news_ewm_box">
+						<img src="__UMENTER__/img/ewm1.jpg" />
+						<p>关注微信公众号</p>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="news_ewm_box">
+						<img src="__UMENTER__/img/ewm2.jpg" />
+						<p>微博搜索uMentor</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="news_r_t news_r_b">
+			<h3 class="title3">热门服务</h3>
+			<div class="news_tag">
+				<a href="#">半DIY留学</a>
+				<a href="#">PS写作业</a>
+				<a href="#">一站式申请服务</a>
+				<a href="#">单项文书写作</a>
+				<a href="#">CV写作</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+{include file="template/footer" /}
+
+
+<script src="__UMENTER__/js/hammer.min.js"></script>
+<script src="__UMENTER__/js/common.js"></script>
+<script src="__UMENTER__/js/slick.js"></script>
+<script src="__UMENTER__/js/scripts.js"></script>
+
+</body>
+</html>

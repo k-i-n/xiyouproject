@@ -1,0 +1,155 @@
+{include file="template/header" /}
+
+		<div class="page_banner">
+			<img class="img1" src="__UMENTER__/img/banner8.jpg" />
+			<img class="img2" src="__UMENTER__/img/p-banner9.jpg" />
+		</div>
+		
+		<div class="experience w">
+			<h2>寻找同校或者同专业的“亲历者”吧</h2>
+			<div class="exper_t">
+				<div class="guide_list">
+					<div class="guide_item">
+						<p class="p1">专业大类：</p>
+						<ul>
+							<li class="on"><a href="/index/cas/index">不限</a></li>
+							{foreach $majors as $major}
+							<li><a href="/index/cas/index?id={$major.cid}">{$major.name}</a></li>
+							{/foreach}
+						</ul>
+					</div>
+					<div class="guide_item">
+						<p class="p1">录取院校：</p>
+						<ul>
+							<li class="on"><a href="/index/cas/index">不限</a></li>
+							{foreach $school1s as $school1}
+							<li><a href="/index/cas/index?id={$school1.cid}">{$school1.name}</a></li>
+							{/foreach}
+							<li class="g_more"><a href="###">∨ 更多</a></li>
+						</ul>
+						<ul class="g_content">
+							{foreach $school2s as $school2}
+							<li><a href="/index/cas/index?id={$school2.cid}">{$school2.name}</a></li>
+							{/foreach}
+						</ul>
+					</div>
+					<div class="guide_item">
+						<p class="p1">地区：</p>
+						<ul>
+							<li><a href="/index/cas/index">不限</a></li>
+							{foreach $areas as $area}
+							<li><a href="/index/cas/index?id={$area.cid}">{$area.name}</a></li>
+							{/foreach}
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<div class="exper_b">
+				<p class="zhu"><span>*注：</span>uMentor已获得学员授权刊登发布offer，为保护个人隐私已做匿名和内容相关调整，其他机构不得转载、抄袭等其他商业用途，违者必究！</p>
+				<div class="exper_main">
+					<div class="row">
+						{foreach $cases as $case}
+						<div class="col-md-3 col-sm-4 col-xs-6">
+							<div class="exper_box">
+								<div class="exper_img">
+									<img src="{$case.offer}" />
+								</div>
+								<div class="exper_des">
+									<h3>{$case.school.name}</h3>
+									<p>{$case.major1}</p>
+								</div>
+								<div class="exper_mask">
+									<h3>{$case.name}，{$case.year}</h3>
+									<p>录取院校：{$case.school.name}，{$case.major1}<br>
+使用服务：{$case.service1}+{$case.service2}<br>
+学校：{$case.school2}，{$case.major2}<br>
+GPA{$case.gpa} 托福{$case.toefl}，GRE{$case.gre}</p>
+									<span class="see">查看详情</span>
+									<div class="exper_pic">
+										<p class="e_close">X</p>
+										<div class="exper_pic_box">
+											<img src="{$case.offer}" />
+										</div>									
+									</div>
+								</div>
+							</div>
+						</div>
+						{/foreach}
+					</div>
+					
+					
+				</div>
+				{$cases->render()}
+			</div>
+		</div>
+		
+		
+		<div class="estimate">
+			<div class="w">
+				<h2>学生评价</h2>
+				<div class="est_main">
+					<div class="slider autoplay">
+						{foreach $evaluates as $evaluate}
+						<div>
+							<div class="est_box">
+								<div class="est_box_t">
+									<div class="est_box_t_img">
+										<img src="{$evaluate.image}" />
+									</div>
+									<div class="est_box_t_des">
+										<p>{$evaluate.item}</p>
+										<p>{$evaluate.year}</p>
+										<p class="person">{$evaluate.name}</p>
+									</div>
+								</div>
+								<div class="est_box_b">
+									{$evaluate.comment}
+								</div>
+							</div>
+						</div>
+						{/foreach}
+					</div>
+				</div>
+			
+				<div class="est_phone">
+					<div class="slider autoplay1">
+						{foreach $evaluates as $evaluate}
+						<div>
+							<div class="est_box">
+								<div class="est_box_t">
+									<div class="est_box_t_img">
+										<img src="{$evaluate.image}" />
+									</div>
+									<div class="est_box_t_des">
+										<p>{$evaluate.item}</p>
+										<p>{$evaluate.year}</p>
+										<p class="person">{$evaluate.name}</p>
+									</div>
+								</div>
+								<div class="est_box_b">
+									{$evaluate.comment}
+								</div>
+							</div>
+						</div>
+						{/foreach}
+					</div>
+				</div>
+			
+			
+			</div>
+		</div>
+
+
+
+{include file="template/footer" /}
+		
+		
+		
+		<script src="__UMENTER__/js/hammer.min.js"></script>
+		<script src="__UMENTER__/js/common.js"></script>
+		<script src="__UMENTER__/js/slick.js"></script>
+		<script src="__UMENTER__/js/scripts.js"></script>
+		
+	</body>
+</html>

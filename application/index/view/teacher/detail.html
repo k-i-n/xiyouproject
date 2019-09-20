@@ -1,0 +1,237 @@
+{include file="template/header" /}
+
+		<div class="page_banner">
+			<img class="img1" src="__UMENTER__/img/banner7.jpg" />
+			<img class="img2" src="__UMENTER__/img/p-banner8.jpg" />
+		</div>
+		
+		<div class="guide w clearfloat">
+			<div class="guide_l">
+				<div class="message">
+					<div class="guide_box">
+						<div class="guide_box_pic">
+							<img src="{$teacher.headimg}">
+						</div>
+						<div class="guide_box_des">
+							<h3>{$teacher.teachername}</h3>
+							<p>服务人数：<span class="orange">{$teacher.servicenum}</span> <span style="margin-left:2%;">评分：<span class="orange">{$teacher.score}</span></span></p>
+							<p>服务内容：{$teacher.scontent} </p>
+							<p>擅长领域：{$teacher.goodat}</p>
+						</div>
+					</div>
+					<div class="message_main">
+						<div class="message_t">
+							<ul>
+								<li class="on">留言</li>
+								<li>评价</li>
+							</ul>
+						</div>
+						<div class="message_content">
+							<div class="message_box" style="display: block;">
+								<textarea id="message"></textarea>
+							</div>
+							<div class="message_box">
+								<div class="row">
+									<div class="col-sm-6">
+										<input type="text" id="major" placeholder="请填写您的专业"/>
+									</div>
+									<div class="col-sm-6">
+										<input type="text" id="service" placeholder="请填写服务内容"/>
+									</div>
+								</div>
+								<textarea id="comment" placeholder="请填写您的评价"></textarea>
+								<button id="button">提交</button>
+								<div class="clear"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="guide_detail">
+					<div class="brief">
+						<h3 class="title2"><img src="__UMENTER__/img/gtb1.png"/>导师简介</h3>
+						<div class="brief_box">
+							{$teacher.introduction}
+						</div>
+					</div>
+					<div class="educate">
+						<h3 class="title2"><img src="__UMENTER__/img/gtb2.png"/>教育经历</h3>
+						<div class="educate_main">
+							{foreach $educations as $education}
+							<div class="educate_box">
+								<div class="educate_box_l">
+									<p>学校：{$education.school}<br>
+									专业：{$education.major}<br>
+									时间：{$education.time}
+									</p>
+								</div>
+								<div class="educate_box_r">
+									<img src="{$education.logo}" />
+								</div>
+							</div>
+							{/foreach}
+						</div>
+					</div>
+					
+					<div class="features">
+						<h3 class="title2"><img src="__UMENTER__/img/gtb3.png"/>特色服务</h3>
+						<div class="features_box">
+							{$teacher.specialservice}
+						</div>
+					</div>
+					
+				</div>
+				
+				<div class="evaluate">
+					<h3 class="title2"><img src="__UMENTER__/img/gtb4.png"/>学生评价</h3>
+					{foreach $evaluates as $evaluate}
+					<div class="eva_box">
+						<div class="eva_box_l">
+							<img src="{$evaluate.user.headimg}" />
+						</div>
+						<div class="eva_box_r">
+							<h4>{$evaluate.user.name}</h4>
+							<div class="eva_tag">
+								<span>{$evaluate.major}</span>
+								<span>{$evaluate.service}</span>
+							</div>
+							<p>{$evaluate.comment}</p>
+						</div>
+					</div>
+					{/foreach}
+					<a class="click" href="#">点击查看更多>></a>
+				</div>
+				
+			</div>
+			<div class="guide_r">
+				<div class="guide_r_t">
+					<a href="#"><img src="__UMENTER__/img/guide.jpg"/></a>
+				</div>
+				<div class="guide_r_c">
+					<h3 class="title3">资讯</h3>
+					<ul>
+						{foreach name="news" item="new"}
+						<li>
+							<a href="/index/news/detail.html?id={$new.id}">
+								<h4>{$new.title}</h4>
+								<span>{$new.create_time|strip_tags|mb_substr=0,10,'utf-8'}</span>
+							</a>
+						</li>
+						{/foreach}
+					</ul>
+				</div>
+				<div class="guide_r_b">
+					<h3 class="title3">导师推荐</h3>
+					<ul>
+						<li>
+							<a href="#">
+								<div class="guide_r_b_img">
+									<img src="__UMENTER__/img/tou2.png" />
+								</div>
+								<div class="guide_r_b_des">
+									<h4>李学长</h4>
+									<p>半DIY / 网申指导 / 文书修改 / 文书写作 / 选校 / 留学咨询</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="guide_r_b_img">
+									<img src="__UMENTER__/img/tou3.png" />
+								</div>
+								<div class="guide_r_b_des">
+									<h4>李学长</h4>
+									<p>半DIY / 网申指导 / 文书修改 / 文书写作 / 选校 / 留学咨询</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="guide_r_b_img">
+									<img src="__UMENTER__/img/tou4.png" />
+								</div>
+								<div class="guide_r_b_des">
+									<h4>李学长</h4>
+									<p>半DIY / 网申指导 / 文书修改 / 文书写作 / 选校 / 留学咨询</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="guide_r_b_img">
+									<img src="__UMENTER__/img/tou5.png" />
+								</div>
+								<div class="guide_r_b_des">
+									<h4>李学长</h4>
+									<p>半DIY / 网申指导 / 文书修改 / 文书写作 / 选校 / 留学咨询</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="guide_r_b_img">
+									<img src="__UMENTER__/img/tou6.png" />
+								</div>
+								<div class="guide_r_b_des">
+									<h4>李学长</h4>
+									<p>半DIY / 网申指导 / 文书修改 / 文书写作 / 选校 / 留学咨询</p>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+		</div>
+
+
+{include file="template/footer" /}
+
+		
+		
+		
+		<script src="__UMENTER__/js/hammer.min.js"></script>
+		<script src="__UMENTER__/js/common.js"></script>
+		<script>
+		    var swiper = new Swiper('.swiper-container', {
+		      spaceBetween: 30,
+		      centeredSlides: true,
+		      autoplay: {
+		        delay: 3500,
+		        disableOnInteraction: false,
+		      },
+		      pagination: {
+		        el: '.swiper-pagination',
+		        clickable: true,
+		      },
+		      navigation: {
+		        nextEl: '.swiper-button-next',
+		        prevEl: '.swiper-button-prev',
+		      },
+		      loop:true,
+		    });
+		</script>
+        <script>
+			$("button").click(function () {
+				var message=document.getElementById("message").value;
+				var major=document.getElementById("major").value;
+				var service=document.getElementById("service").value;
+				var comment=document.getElementById("comment").value;
+				if(message=="" || major=="" || service=="" || comment==""){
+				    alert("各项填写不能为空");
+				    return false;
+				}
+
+				$.ajax({
+					type:"POST",
+					url:"/index/teacher/add?id={$id}",
+					data:{message:message,major:major,service:service,comment:comment},
+					dataType:'json',
+					success:function (id) {
+						    window.location.href="/index/teacher/detail?id="+id;
+                    }
+				});
+            });
+        </script>
+	</body>
+</html>

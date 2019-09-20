@@ -1,0 +1,212 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="box box-primary">
+            {include file="template/form_header" /}
+            <form id="dataForm" class="form-horizontal dataForm" action="" method="post" enctype="multipart/form-data">
+                <div class="box-body">
+                    <div class="fields-group">
+                    	 {if isset($info)}
+                        <input id="id" name="id" value="{$info.id}"  hidden placeholder="请勿修改">
+                        {/if}
+                        <div class="form-group">
+                          <label for="teachername" class="col-sm-2 control-label">导师名称</label>
+                          <div class="col-sm-10 col-md-4">
+                              <div class="input-group">
+                                  <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+                                  <input maxlength="20" id="teachername" name="teachername" value="{$info.teachername|default=''}" class="form-control" placeholder="请输入导师名称">
+                              </div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="headimg" class="col-sm-2 control-label">导师头像</label>
+                        <div class="col-sm-10 col-md-4">
+                            <div class="input-group file-caption-main">
+                                <div tabindex="500" class="form-control file-caption  kv-fileinput-caption">
+                                    <div class="file-caption-name" id="input-filename-headimg">
+                                    </div>
+                                </div>
+                                <div class="input-group-btn">
+                                    <div tabindex="500" class="btn btn-primary btn-file">
+                                        <i class="glyphicon glyphicon-folder-open"></i>
+                                        <span class="hidden-xs">浏览</span>
+                                        <input type="file" class="form-input-image"
+                                      data-preview="image-preview-headimg"
+                                      data-showname="input-filename-headimg" name="headimg" id="headimg">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label"></label>
+                      <div class="col-sm-10 col-md-4">
+                          <div class="input-group file-caption-main">
+                              <img id="image-preview-headimg" src="{$info.headimg|default=''}" style="max-width: 150px;max-height: 150px">
+                          </div>
+                      </div>
+                  </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">服务学校</label>
+                            <div class="col-sm-10 col-md-4">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-list"></i></span>
+                                    <select name="serviceschool" id="serviceschool" class="form-control">
+                                        <option value="">请选择</option>
+                                        {foreach name="serviceschool" item="item"}
+                                        <option value="{$item.cid}" {if isset($info) && !empty($info)}{if $item.cid == $info.serviceschool} selected = "selected"{/if}{/if}>{$item.name}</option>
+                                        {/foreach}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                      <div class="form-group">
+                          <label class="col-sm-2 control-label">服务区域</label>
+                          <div class="col-sm-10 col-md-4">
+                              <div class="input-group">
+                                  <span class="input-group-addon"><i class="fa fa-list"></i></span>
+                                  <select name="servicearea" id="servicearea" class="form-control">
+                                      <option value="">请选择</option>
+                                      {foreach name="servicearea" item="item"}
+                                      <option value="{$item.cid}" {if isset($info) && !empty($info)}{if $item.cid == $info.servicearea} selected = "selected"{/if}{/if}>{$item.name}</option>
+                                      {/foreach}
+                                  </select>
+                              </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-2 control-label">服务专业</label>
+                          <div class="col-sm-10 col-md-4">
+                              <div class="input-group">
+                                  <span class="input-group-addon"><i class="fa fa-list"></i></span>
+                                  <select name="servicemajor" id="servicemajor" class="form-control">
+                                      <option value="">请选择</option>
+                                      {foreach name="servicemajor" item="item"}
+                                      <option value="{$item.cid}" {if isset($info) && !empty($info)}{if $item.cid == $info.servicemajor} selected = "selected"{/if}{/if}>{$item.name}</option>
+                                      {/foreach}
+                                  </select>
+                              </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">负责顾问学位</label>
+                            <div class="col-sm-10 col-md-4">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-list"></i></span>
+                                    <select name="counselor" id="counselor" class="form-control">
+                                        <option value="">请选择</option>
+                                        {foreach name="guwen" item="item"}
+                                        <option value="{$item.cid}" {if isset($info) && !empty($info)}{if $item.cid == $info.counselor} selected = "selected"{/if}{/if}>{$item.name}</option>
+                                        {/foreach}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">负责申请学位</label>
+                            <div class="col-sm-10 col-md-4">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-list"></i></span>
+                                    <select name="apply" id="apply" class="form-control">
+                                        <option value="">请选择</option>
+                                        {foreach name="shenqing" item="item"}
+                                        <option value="{$item.cid}" {if isset($info) && !empty($info)}{if $item.cid == $info.apply} selected = "selected"{/if}{/if}>{$item.name}</option>
+                                        {/foreach}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="form-group">
+                            <label for="servicenum" class="col-sm-2 control-label">服务人数</label>
+                            <div class="col-sm-10 col-md-4">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+                                    <input maxlength="20" id="servicenum" name="servicenum" value="{$info.servicenum|default=''}"
+                                           class="form-control" placeholder="请输入服务人数">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="score" class="col-sm-2 control-label">评分</label>
+                          <div class="col-sm-10 col-md-4">
+                              <div class="input-group">
+                                  <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+                                  <input maxlength="20" id="score" name="score" value="{$info.score|default=''}"
+                                         class="form-control" placeholder="请输入评分">
+                              </div>
+                          </div>
+                      </div>
+                         <div class="form-group">
+                            <label for="scontent" class="col-sm-2 control-label">服务内容</label>
+                            <div class="col-sm-10 col-md-4">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+                                    <input maxlength="20" id="scontent" name="scontent" value="{$info.scontent|default=''}"
+                                           class="form-control" placeholder="请输入服务内容">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="goodat" class="col-sm-2 control-label">擅长内容</label>
+                          <div class="col-sm-10 col-md-4">
+                              <div class="input-group">
+                                  <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+                                  <input maxlength="20" id="goodat" name="goodat" value="{$info.goodat|default=''}"
+                                         class="form-control" placeholder="请输入擅长内容">
+                              </div>
+                          </div>
+                      </div>
+                        <div class="form-group">
+                            <label for="introduction" class="col-sm-2 control-label">导师简介</label>
+		                    <div class="fields-group">
+		                        <div class="form-group">
+		                            <div class="col-sm-7">
+		                                <script id="introduction" name="introduction"  type="text/plain" >{$info.introduction|default=''}</script>
+		                            </div>
+		                        </div>
+		                    </div>
+                        </div>
+                      <div class="form-group">
+                        <label for="specialservice" class="col-sm-2 control-label">特色服务</label>
+                        <div class="fields-group">
+                            <div class="form-group">
+                                <div class="col-sm-7">
+                                    <script id="specialservice" name="specialservice"  type="text/plain" >{$info.specialservice|default=''}</script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+		            </div>
+                </div>
+                {include file="template/form_footer" /}
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript" charset="utf-8" src="__STATIC__/plugins/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="__STATIC__/plugins/ueditor/ueditor.all.js"> </script>
+<script type="text/javascript" charset="utf-8" src="__STATIC__/plugins/ueditor/lang/zh-cn/zh-cn.js"></script>
+<!--<script>
+    var url="{:url('extend/ueserver')}";
+    //实例化编辑器
+    var ue = UE.getEditor('content',{serverUrl :url});
+</script>-->
+<script type="text/javascript">
+    $(function () {
+        editorintroduction = new baidu.editor.ui.Editor();
+        editorintroduction.render('introduction');
+        try {
+            editorcontent.sync();
+        } catch (err) {
+        }
+        editorspecialservice = new baidu.editor.ui.Editor();
+        editorspecialservice.render('specialservice');
+        try {
+          editorspecialservice.sync();
+        } catch (err) {
+        }
+    });
+
+</script>

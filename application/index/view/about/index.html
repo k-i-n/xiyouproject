@@ -1,0 +1,140 @@
+{include file="template/header" /}
+		
+		<div class="about">
+			<div class="w">
+				<h2>{$item.title}</h2>
+				{$item.description}
+			</div>			
+		</div>
+		
+		<div class="meet w">
+			<div class="title">
+				<h2>遇见 uMentor</h2>
+			</div>
+			<div class="meet_main">
+				<div class="meet_box">
+					<h3>uMentor办公环境</h3>
+					<p>温馨的工作环境带给你快乐的每一天</p>
+				</div>
+				<img src="__UMENTER__/img/about1.jpg" />
+				
+			</div>
+		</div>
+		
+		<div class="value">
+			<div class="w">
+				<div class="title">
+					<h2>价值理念</h2>
+				</div>
+				<div class="value_guide">
+					<p>“u”是“有”“优”的音译，也是英文YOU的简写，Mentor，导师、老师的意思。为你提供<br>优秀的导师，指导你完成半DIY留学申请，助力实现留学梦想。</p>
+				</div>
+				<div class="value_main">
+					<div class="row">
+						<div class="col-md-3 col-xs-6">
+							<div class="value_img">
+								<img src="__UMENTER__/img/about2.png" />
+							</div>
+							<div class="value_des">
+								<h3>学员至上</h3>
+								<p>学员是第一位的，这是公司的信条也是公司的底线</p>
+							</div>
+						</div>
+						<div class="col-md-3 col-xs-6">
+							<div class="value_img">
+								<img src="__UMENTER__/img/about3.png" />
+							</div>
+							<div class="value_des">
+								<h3>质量第一</h3>
+								<p>服务质量是检测公司水平的唯一标准，这也是我们始终坚持的</p>
+							</div>
+						</div>
+						<div class="col-md-3 col-xs-6">
+							<div class="value_img">
+								<img src="__UMENTER__/img/about4.png" />
+							</div>
+							<div class="value_des">
+								<h3>追求卓越</h3>
+								<p>从文书到服务再到申请的学校，我们只想好一点再好一点</p>
+							</div>
+						</div>
+						<div class="col-md-3 col-xs-6">
+							<div class="value_img">
+								<img src="__UMENTER__/img/about5.png" />
+							</div>
+							<div class="value_des">
+								<h3>共筑梦想</h3>
+								<p>助力每一位学员实现留学梦，是我们全体成员一直以来的渴望。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="join w">
+			<div class="title1">
+				<h2>加入我们</h2>
+			</div>
+			<div class="join_main clearfloat">
+				<div class="join_l">
+					<ul>
+						<li class="on">外籍文书导师</li>
+						<li>留学大咖</li>
+						<li>翻译达人</li>
+					</ul>
+				</div>
+				<div class="join_r">
+					<div class="join_box" style="display: block;">
+						<img class="ballon" src="__UMENTER__/img/about6.png" />
+						<img src="__UMENTER__/img/y1.png" />
+						{$item.tutor}
+						<img style="float:right;" src="__UMENTER__/img/y2.png" />
+						<div class="clear"></div>
+					</div>
+					<div class="join_box">
+						<img class="ballon" src="__UMENTER__/img/about6.png" />
+						<img src="__UMENTER__/img/y1.png" />
+						{$item.master}
+						<img style="float:right;" src="__UMENTER__/img/y2.png" />
+						<div class="clear"></div>
+					</div>
+					<div class="join_box">
+						<img class="ballon" src="__UMENTER__/img/about6.png" />
+						<img src="__UMENTER__/img/y1.png" />
+						{$item.expert}
+						<img style="float:right;" src="__UMENTER__/img/y2.png" />
+						<div class="clear"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+{include file="template/footer" /}
+		
+
+		
+		<script src="__UMENTER__/js/hammer.min.js"></script>
+		<script src="__UMENTER__/js/common.js"></script>
+		<script>
+		    var swiper = new Swiper('.swiper-container', {
+		      spaceBetween: 30,
+		      centeredSlides: true,
+		      autoplay: {
+		        delay: 3500,
+		        disableOnInteraction: false,
+		      },
+		      pagination: {
+		        el: '.swiper-pagination',
+		        clickable: true,
+		      },
+		      navigation: {
+		        nextEl: '.swiper-button-next',
+		        prevEl: '.swiper-button-prev',
+		      },
+		      loop:true,
+		    });
+		</script>
+		</body>
+</html>
+

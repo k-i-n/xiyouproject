@@ -1,0 +1,82 @@
+{include file="template/header" /}
+
+<div class="problem">
+	<div class="news w clearfloat">
+		<div class="news_l">
+			<div class="question">
+				<ul id="accordion1" class="accordion">
+					{foreach name="list" item="item"}
+					<li>
+						<div class="link">{$item.title}<i class="fa fa-chevron-down"><img src="__UMENTER__/img/arrow5.png"/></i></div>
+						<ul class="submenu">
+							<li>
+								{$item.description}
+							</li>
+						</ul>
+					</li>
+					{/foreach}
+				</ul>
+			</div>
+		</div>
+		<div class="news_r">
+			<div class="news_r_t">
+				<h3 class="title3">热门标签</h3>
+				<div class="news_tag">
+					<a href="#">行家指引</a>
+					<a href="#">offers</a>
+					<a href="#">留学文书服务</a>
+					<a href="#">Application Guide</a>
+					<a href="#">science</a>
+					<a href="#">留学文书服务</a>
+					<a href="#">行家指引</a>
+					<a href="#">offers</a>
+				</div>
+			</div>
+			<div class="guide_r_t news_r_c">
+				<a href="#"><img src="__UMENTER__/img/guide.jpg"/></a>
+			</div>
+			<div class="news_ewm">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="news_ewm_box">
+							<img src="__UMENTER__/img/ewm1.jpg" />
+							<p>关注微信公众号</p>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="news_ewm_box">
+							<img src="__UMENTER__/img/ewm2.jpg" />
+							<p>微博搜索uMentor</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="news_r_t news_r_b">
+				<h3 class="title3">热门服务</h3>
+				<div class="news_tag">
+					<a href="#">半DIY留学</a>
+					<a href="#">PS写作业</a>
+					<a href="#">一站式申请服务</a>
+					<a href="#">单项文书写作</a>
+					<a href="#">CV写作</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+{include file="template/footer" /}
+
+
+
+
+
+
+<script src="__UMENTER__/js/hammer.min.js"></script>
+<script src="__UMENTER__/js/common.js"></script>
+<script src="__UMENTER__/js/slick.js"></script>
+<script src="__UMENTER__/js/scripts.js"></script>
+
+</body>
+</html>
